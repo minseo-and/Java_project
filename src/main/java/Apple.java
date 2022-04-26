@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Apple extends Choose{
+
+    public static void Product(){
+        Scanner scan = new Scanner(System.in);
+        String answer;
+        boolean b = true;
+
+        do {
+            Want();
+            System.out.println("다른 필요한건 없으신가요? : 네/아니오");
+            answer = scan.next();
+            if (answer.equals("네")){
+                System.out.println("초기 화면으로 가시겠습니까? : 네/아니오");
+                answer = scan.next();
+                if (answer.equals("네")){
+                    Choose.Select();
+                } else {
+                    System.out.println("다시 입력 하시겠습니까? 네/아니오");
+                    answer = scan.next();
+                    if (answer.equals("네")) {
+                        Select();
+                    }
+                    else {
+                        System.out.println("감사합니다 안녕히 가세요");
+                        b = false;
+                    }
+                }
+
+            } else if(answer.equals("아니오")){
+                Want();
+            } else System.out.println("다시 입력 해주세요");
+        } while (!b);
+    }
+    public static void Want(){
+        Scanner scan = new Scanner(System.in);
+        String select;
+        System.out.println("핸드폰 이어폰 노트북 스마트워치 무엇을 원하시나요? : ");
+        select = scan.next();
+        if (select.equals("핸드폰")){
+            System.out.println("Iphone 13 pro max를 드리겠습니다.");
+        } else if (select.equals("이어폰")){
+            System.out.println("에어팟3를 드리겠습니다.");
+        } else if (select.equals("노트북")){
+            System.out.println("맥북 m1 max를 드리겠습니다.");
+        } else if (select.equals("스마트워치")){
+            System.out.println("애플 워치를 드리겠습니다.");
+        }
+
+
+    }
+}
