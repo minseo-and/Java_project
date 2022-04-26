@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class Choose {
 
     static String cellPhone, earPhone, lapTop, watch;
@@ -12,10 +14,10 @@ public class Choose {
 
         System.out.println("원하시는 회사를 선택해 주세요 : 삼성, 애플, 엘지, 샤오미, 없어요");
         a = scan.next();
-        Company(a);
+        Select(a);
 
     }
-    public static void Company(String a){
+    public static void Select(String a){
         Scanner scan = new Scanner(System.in);
         String answer;
 

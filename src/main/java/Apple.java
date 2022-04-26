@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Apple extends Choose{
 
     public static void Product(){
-        Want();
+        Select();
     }
-    public static void Want(){
+    public static void Select(){
         Scanner scan = new Scanner(System.in);
         String select;
         System.out.println("핸드폰 이어폰 노트북 스마트워치 무엇을 원하시나요? : ");
@@ -18,6 +18,10 @@ public class Apple extends Choose{
             System.out.println("맥북 m1 max를 드리겠습니다.");
         } else if (select.equals("스마트워치")){
             System.out.println("애플 워치를 드리겠습니다.");
+        }
+        else {
+            System.out.println("다시 입력 해주세요");
+            Select();
         }Another();
 
     }
@@ -45,7 +49,7 @@ public class Apple extends Choose{
             }
 
         } else if(answer.equals("아니오")){
-            Want();
+            Select();
         } else System.out.println("다시 입력 해주세요");
     }
 }
