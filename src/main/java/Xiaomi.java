@@ -3,35 +3,7 @@ import java.util.Scanner;
 public class Xiaomi extends Choose{
 
     public static void Product(){
-        Scanner scan = new Scanner(System.in);
-        String answer;
-        boolean b = true;
-
-        do {
-            Want();
-            System.out.println("다른 필요한건 없으신가요? : 네/아니오");
-            answer = scan.next();
-            if (answer.equals("네")){
-                System.out.println("초기 화면으로 가시겠습니까? : 네/아니오");
-                answer = scan.next();
-                if (answer.equals("네")){
-                    Choose.Select();
-                } else {
-                    System.out.println("다시 입력 하시겠습니까? 네/아니오");
-                    answer = scan.next();
-                    if (answer.equals("네")) {
-                        Select();
-                    }
-                    else {
-                        System.out.println("감사합니다 안녕히 가세요");
-                        b = false;
-                    }
-                }
-
-            } else if(answer.equals("아니오")){
-                Want();
-            } else System.out.println("다시 입력 해주세요");
-        } while (!b);
+        Want();
     }
     public static void Want(){
         Scanner scan = new Scanner(System.in);
@@ -46,6 +18,34 @@ public class Xiaomi extends Choose{
             System.out.println("미 노트북 에어를 드리겠습니다.");
         } else if (select.equals("스마트워치")){
             System.out.println("미 워치를 드리겠습니다.");
-        }
+        }Another();
+
+    }
+
+    public static void Another() {
+        Scanner scan = new Scanner(System.in);
+        String answer;
+        System.out.println("다른 필요한건 없으신가요? : 네/아니오");
+        answer = scan.next();
+        if (answer.equals("네")){
+            System.out.println("초기 화면으로 가시겠습니까? : 네/아니오");
+            answer = scan.next();
+            if (answer.equals("네")){
+                Choose.Select();
+            } else {
+                System.out.println("다시 입력 하시겠습니까? 네/아니오");
+                answer = scan.next();
+                if (answer.equals("네")) {
+                    Select();
+                }
+                else {
+                    System.out.println("감사합니다 안녕히 가세요");
+
+                }
+            }
+
+        } else if(answer.equals("아니오")){
+            Want();
+        } else System.out.println("다시 입력 해주세요");
     }
 }
